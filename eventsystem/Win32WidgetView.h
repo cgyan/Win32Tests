@@ -3,7 +3,7 @@
 
 #include "WidgetView.h"
 #include <windows.h>
-#include "Win32EventQueue.h"
+#include "Win32RunLoop.h"
 #include "Object.h"
 #include "WidgetModel.h"
 #include "Event.h"
@@ -52,7 +52,7 @@ private:
     void
     initWindowClass() {
     	wndClass.style 			= CS_HREDRAW | CS_VREDRAW;
-    	wndClass.lpfnWndProc 	= Win32EventQueue::WndProc;
+    	wndClass.lpfnWndProc 	= Win32RunLoop::WndProc;
     	wndClass.cbClsExtra 	= 0;
     	wndClass.cbWndExtra 	= 0;
     	wndClass.hInstance 		= GetModuleHandle(NULL);

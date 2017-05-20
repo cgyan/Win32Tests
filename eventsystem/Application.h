@@ -2,18 +2,13 @@
 #define APPLICATION_H_
 
 #include <cstdint>
-#include <windows.h>
-#include <iostream>
-class EventQueue;
+class RunLoop;
 class Object;
-class Widget;
 class Event;
 
 class Application {
 private:
-    EventQueue * eventQueue;
-public:
-    static bool shouldKeepRunning;
+    RunLoop * runLoop;
 public:
     Application();
     ~Application();
