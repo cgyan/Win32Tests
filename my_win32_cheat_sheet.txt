@@ -1,0 +1,67 @@
+CS_ (Class Style) 
+WS_ (Windows Style)
+CW_ (Child Window?)
+WM_ (Windows Message)
+TA_ (Text Align)
+SIF_ (Scroll Info Flag?)
+SM_ (System Metrics)
+SB_ (Scroll Bar)
+MB_ (Message Box)
+
+SCROLLINFO
+-- The SCROLLINFO structure contains scroll bar parameters 
+-- to be set by the SetScrollInfo function (or 
+-- SBM_SETSCROLLINFO message), or retrieved by the 
+-- GetScrollInfo function (or SBM_GETSCROLLINFO message).
+
+PAINTSTRUCT
+-- The PAINTSTRUCT structure contains information for an 
+-- application. This information can be used to paint the 
+-- client area of a window owned by that application.
+
+TEXTMETRIC
+-- The TEXTMETRIC structure contains basic information about 
+-- a physical font. All sizes are specified in logical units; 
+-- that is, they depend on the current mapping mode of the 
+-- display context.
+
+HWND - handle to instance of window class
+HDC - handle to device context
+WPARAM - message parameter
+LPARAM - message parameter
+
+Begin/EndPaint
+-- returns and releases an HDC
+-- should only be called whilst handling WM_PAINT message
+
+GetDC/ReleaseDC
+-- returns and releases an HDC, 
+-- can be used anywhere unlike Begin/EndPaint
+
+GetTextMetrics
+-- The GetTextMetrics function fills the specified buffer with
+-- the metrics for the currently selected font
+
+SetScrollInfo
+-- The SetScrollInfo function sets the parameters of a scroll 
+-- bar, including the minimum and maximum scrolling positions,
+-- the page size, and the position of the scroll box (thumb). 
+-- The function also redraws the scroll bar, if requested.
+-- Called in response to WM_SIZE, WM_VSCROLL and WM_HSCROLL 
+-- messages
+
+GetScrollInfo
+-- The GetScrollInfo function retrieves the parameters of a 
+-- scroll bar, including the minimum and maximum scrolling 
+-- positions, the page size, and the position of the scroll 
+-- box (thumb).
+
+ScrollWindow
+-- The ScrollWindow function scrolls the contents of the 
+-- specified window's client area. Note: The ScrollWindow 
+-- function is provided for backward compatibility. New 
+-- applications should use the ScrollWindowEx function.
+
+ScrollWindowEx
+-- The ScrollWindowEx function scrolls the contents of the 
+-- specified window's client area.
