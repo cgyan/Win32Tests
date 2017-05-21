@@ -34,9 +34,10 @@ public:
     virtual void create() = 0;
     virtual void update() = 0;
     virtual void show() = 0;
+    virtual void resize(const int width, const int height) = 0;
     virtual HWND hwnd() const = 0;
 public:
-    virtual void attachToParentWidget(Widget * parent) {}
+    virtual void attachToParentWidget(Widget * parent) { std::cout << "Should not be called \n"; }
 };
 
 

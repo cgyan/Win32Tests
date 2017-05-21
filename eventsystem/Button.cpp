@@ -6,7 +6,7 @@
 Button::Button(Widget * parent)
 :   Widget(new ButtonImpl(this), parent)
 {
-    //
+
 }
 
 Button::~Button() {
@@ -20,7 +20,7 @@ Button::setText(const std::string& text) {
 
 void
 Button::onResize(ResizeEvent * e) {
-    impl->resize(e->width(), e->height());
+    impl->onResize(e->width(), e->height());
 }
 
 void

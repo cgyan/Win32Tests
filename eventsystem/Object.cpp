@@ -18,11 +18,11 @@ void
 Object::setParent(Object * parent) {
     this->m_parent = parent; // 'parent' might be null
     if (parent != nullptr)
-        addThisObjectToParentsChildren(parent);
+        addThisObjectToParentsChildrenList(parent);
 }
 
 void
-Object::addThisObjectToParentsChildren(Object * parent) {
+Object::addThisObjectToParentsChildrenList(Object * parent) {
     assert(parent != nullptr);
     parent->m_children.push_back(this);
 }

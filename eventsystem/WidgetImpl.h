@@ -4,6 +4,8 @@
 #include "WidgetModel.h"
 #include "WidgetView.h"
 #include "Win32WidgetView.h"
+#include <windows.h>
+#include <cassert>
 class Object;
 
 class WidgetImpl {
@@ -31,6 +33,7 @@ public:
 
     void
     setParent(Widget * parent) {
+        assert(parent);
         view->attachToParentWidget(parent);
     }
 
@@ -52,8 +55,13 @@ public:
 
     void
     resize(const int width, const int height) {
+        // resizing the view triggers a ResizeEvent which updates the model
+        view->resize(width, height);
+    }
+
+    void
+    onResize(const int width, const int height) {
         model->setSize(width, height);
-        view->update();
     }
 
     const int

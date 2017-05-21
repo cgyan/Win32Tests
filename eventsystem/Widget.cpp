@@ -4,6 +4,7 @@
 #include "CloseEvent.h"
 #include "ResizeEvent.h"
 #include "MouseEvent.h"
+#include <windows.h>
 //=============================================================================================
 // Widget
 //=============================================================================================
@@ -11,14 +12,14 @@ Widget::Widget(Widget * parent)
 :   Object(parent),
     impl{new WidgetImpl(this)}
 {
-    setParent(parent);
+    if (parent) impl->setParent(parent);
 }
 
 Widget::Widget(WidgetImpl * impl, Widget * parent)
 :   Object(parent),
     impl{impl}
 {
-    impl->setParent(parent);
+    if (parent) impl->setParent(parent);
 }
 
 Widget::~Widget() {
@@ -32,6 +33,7 @@ Widget::hwnd() const {
 
 void
 Widget::setParent(Widget * parent) {
+    assert(parent);
     Object::setParent(parent);
     impl->setParent(parent);
 }
@@ -82,7 +84,9 @@ Widget::onClose(CloseEvent * event) {
 
 void
 Widget::onResize(ResizeEvent * event) {
-    impl->resize(event->width(), event->height());
+    impl->onResize(event->width(), event->height());
+    std::cout << "Widget::onResize event " << event->width() << " " << event->height() << std::endl;
+    std::cout << "Widget::onResize model " << this->width() << " " << this->height() << std::endl;
 }
 
 void

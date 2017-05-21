@@ -44,6 +44,19 @@ public:
         SetWindowText(m_hwnd, TEXT(this->m_model->title().c_str()));
     }
 
+    virtual void
+    resize(const int width, const int height) override {
+        RECT currentRect;
+        GetWindowRect(hwnd(), &currentRect);
+        int currentX = currentRect.left;
+        int currentY = currentRect.top;
+
+        RECT newRect = {currentX, currentY, currentX+width, currentY+height};
+        DWORD styles = GetWindowLongPtr(hwnd(), GWL_STYLE);
+        AdjustWindowRect(&newRect, styles, FALSE);
+        SetWindowPos(hwnd(), HWND_TOP, newRect.left, newRect.top, newRect.right-newRect.left, newRect.bottom-newRect.top, SWP_SHOWWINDOW);
+    }
+
     virtual HWND
     hwnd() const override {
         return m_hwnd;
@@ -85,6 +98,10 @@ private:
     		NULL
     	);
         SetWindowLongPtr(m_hwnd, GWLP_USERDATA, LONG_PTR(this->observer()));
+        // update model with initial width and height
+        RECT rect;
+        GetWindowRect(m_hwnd, &rect);
+        this->m_model->setSize(rect.right-rect.left, rect.bottom-rect.top);
     }
 };
 

@@ -11,8 +11,8 @@ private:
 public:
     WidgetModel()
     :   m_title{},
-        m_width{},
-        m_height{}
+        m_width{0},
+        m_height{0}
     {}
 
     void

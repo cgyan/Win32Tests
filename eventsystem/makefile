@@ -1,6 +1,6 @@
 CC = g++
 
-CPPFLAGS = -Wall -std=c++11 -mwindows -mconsole
+CPPFLAGS = -Wall -std=c++11 -mwindows -mconsole -g
 
 OBJS = \
 	main.o \

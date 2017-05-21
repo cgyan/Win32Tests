@@ -21,7 +21,7 @@ public:
     Object *        parent() const;
     ObjectList      children() const;
 private:
-    void            addThisObjectToParentsChildren(Object * parent);
+    void            addThisObjectToParentsChildrenList(Object * parent);
 };
 
 
