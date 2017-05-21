@@ -1,0 +1,8 @@
+Button.o: Button.cpp Button.h Widget.h Object.h ButtonImpl.h WidgetImpl.h \
+ WidgetModel.h WidgetView.h Win32WidgetView.h Win32RunLoop.h RunLoop.h \
+ Event.h CloseEvent.h ResizeEvent.h MouseEvent.h ButtonModel.h \
+ Win32ButtonView.h
+Button.cpp Button.h Widget.h Object.h ButtonImpl.h WidgetImpl.h :
+ WidgetModel.h WidgetView.h Win32WidgetView.h Win32RunLoop.h RunLoop.h :
+ Event.h CloseEvent.h ResizeEvent.h MouseEvent.h ButtonModel.h :
+ Win32ButtonView.h :

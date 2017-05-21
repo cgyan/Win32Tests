@@ -1,0 +1,4 @@
+main.o: main.cpp Application.h Widget.h Object.h DerivedWidget.h \
+ CloseEvent.h Event.h ResizeEvent.h Button.h
+main.cpp Application.h Widget.h Object.h DerivedWidget.h :
+ CloseEvent.h Event.h ResizeEvent.h Button.h :

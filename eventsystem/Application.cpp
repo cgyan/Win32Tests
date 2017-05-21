@@ -1,7 +1,7 @@
 #include "Application.h"
 #include "Win32RunLoop.h"
 #include "Object.h"
-#include "Event.h"
+#include <cassert>
 
 Application::Application()
 :   runLoop{new Win32RunLoop}

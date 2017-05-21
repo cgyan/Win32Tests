@@ -1,0 +1,4 @@
+Application.o: Application.cpp Application.h Win32RunLoop.h RunLoop.h \
+ Object.h
+Application.cpp Application.h Win32RunLoop.h RunLoop.h :
+ Object.h :

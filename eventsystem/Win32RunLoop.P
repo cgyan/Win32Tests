@@ -1,0 +1,4 @@
+Win32RunLoop.o: Win32RunLoop.cpp Win32RunLoop.h RunLoop.h Application.h \
+ CloseEvent.h Event.h
+Win32RunLoop.cpp Win32RunLoop.h RunLoop.h Application.h :
+ CloseEvent.h Event.h :

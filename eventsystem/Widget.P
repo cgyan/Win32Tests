@@ -1,0 +1,6 @@
+Widget.o: Widget.cpp Widget.h Object.h WidgetImpl.h WidgetModel.h \
+ WidgetView.h Win32WidgetView.h Win32RunLoop.h RunLoop.h Event.h \
+ CloseEvent.h ResizeEvent.h MouseEvent.h
+Widget.cpp Widget.h Object.h WidgetImpl.h WidgetModel.h :
+ WidgetView.h Win32WidgetView.h Win32RunLoop.h RunLoop.h Event.h :
+ CloseEvent.h ResizeEvent.h MouseEvent.h :
