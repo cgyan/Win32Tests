@@ -23,7 +23,6 @@ $(EXE) : $(OBJS)
 
 %.o : %.cpp
 	@echo Building file: $<
-	@echo Another line
 	$(CC) $(CPPFLAGS) -MD -c $<
 	@cp $*.d $*.P; \
 		sed -e 's/#.*//' -e 's/^[^:]*: *//' -e 's/ *\\$$//' \
